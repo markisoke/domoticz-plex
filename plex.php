@@ -3,6 +3,7 @@
 
 $domoticz_url="http://127.0.0.1:8080"; // no trailing slash!
 $plex_url="http://10.0.0.200:32400"; // no trailing slash!
+$plex_token="plextoken"; // X-Plex-Token
 
 // translation
 $plex_status=array(
@@ -63,7 +64,7 @@ if ($devices && is_array($devices) && isset($devices['result']) && is_array($dev
 }
 
 if (count($device_array)){
-	$plex=unserialize_xml(simplexml_load_string(get_url($plex_url.'/status/sessions')));
+	$plex=unserialize_xml(simplexml_load_string(get_url($plex_url.'/status/sessions?X-Plex-Token='.$plex_token)));
 
 	if (isset($plex['Video']['@attributes'])) $plex['Video']=array('0'=>$plex['Video']);
 	if (isset($plex['Video'])){
