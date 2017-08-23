@@ -85,6 +85,5 @@ if (count($device_array)){
 		if ($d['status']!=$d['new_status']) get_url($domoticz_url.'/json.htm?type=command&param=udevice&idx='.$d['idx'].'&nvalu=0&svalue='.urlencode($d['new_status']));
 	}
 }
-
 // EOF
 ?>
