@@ -24,6 +24,7 @@ apt-get install php5-cli php5-curl
 ```php
 $domoticz_url="http://127.0.0.1:8080/";
 $plex_url="http://192.168.1.100:32400/";
+$plex_token="plextoken";
 ```
 
 * Setup unix cron 
